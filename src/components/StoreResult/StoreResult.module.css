@@ -1,0 +1,21 @@
+.StoreResult button {
+  background-color: #fa923f;
+  color: white;
+  padding: 15px 32px;
+  font-size: 18px;
+  border-radius: 5px;
+  outline: 0;
+}
+.StoreResult button:hover {
+  color: #555;
+  background-color: #f7db40;
+  cursor: pointer;
+  border: 0;
+
+  font-weight: bold;
+}
+.StoreResult ul {
+  list-style: none;
+  text-align: right;
+  margin-right: 50%;
+}

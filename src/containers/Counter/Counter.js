@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import styles from './Counter.module.css';
 import CounterOutput from '../../components/CounterOutput/CounterOutput';
 import CounterControl from '../../components/CounterControl/CounterControl';
+import StoreResult from '../../components/StoreResult/StoreResult';
 
 class Counter extends Component {
   render() {
@@ -23,12 +24,7 @@ class Counter extends Component {
           clicked={this.props.onSubtractCounter}
         />
         <hr />
-        <button onClick={this.props.onStoreResult}>Store Result</button>
-        <ul>
-          {this.props.storedResults.map(strRes => (
-            <li key={strRes.id}>{strRes.value}</li>
-          ))}
-        </ul>
+        <StoreResult />
       </div>
     );
   }
@@ -36,8 +32,7 @@ class Counter extends Component {
 
 const mapStateToProps = state => {
   return {
-    ctr: state.counter,
-    storedResults: state.results
+    ctr: state.counter
   };
 };
 
@@ -46,8 +41,7 @@ const mapDispatchToProps = dispatch => {
     onIncrementCounter: () => dispatch({ type: 'INCREMENT' }),
     onDecrementCounter: () => dispatch({ type: 'DECREMENT' }),
     onAddCounter: () => dispatch({ type: 'ADD', value: 5 }),
-    onSubtractCounter: () => dispatch({ type: 'SUBTRACT', value: 5 }),
-    onStoreResult: () => dispatch({ type: 'STORE_RESULT' })
+    onSubtractCounter: () => dispatch({ type: 'SUBTRACT', value: 5 })
   };
 };
 
