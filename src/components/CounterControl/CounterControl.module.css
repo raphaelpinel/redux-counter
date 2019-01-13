@@ -1,0 +1,31 @@
+.CounterControl {
+  cursor: pointer;
+  width: 40%;
+  font-size: 16px;
+  padding: 20px;
+  margin: 16px;
+  font-weight: bold;
+  box-sizing: border-box;
+  border: 1px solid #eee;
+  display: inline-block;
+  box-shadow: 0 2px 2px #ccc;
+}
+
+@media (max-width: 321px) {
+  .CounterControl {
+    width: 80%;
+  }
+}
+
+@media (min-width: 512px) {
+  .CounterControl {
+    width: 40%;
+    margin: 2vw;
+  }
+}
+
+@media (min-width: 729px) {
+  .CounterControl {
+    width: 150px;
+  }
+}
