@@ -4,6 +4,7 @@ import styles from './Counter.module.css';
 import CounterOutput from '../../components/CounterOutput/CounterOutput';
 import CounterControl from '../../components/CounterControl/CounterControl';
 import StoreResult from '../../components/StoreResult/StoreResult';
+import * as actionTypes from '../../store/actions';
 
 class Counter extends Component {
   render() {
@@ -38,10 +39,10 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onIncrementCounter: () => dispatch({ type: 'INCREMENT' }),
-    onDecrementCounter: () => dispatch({ type: 'DECREMENT' }),
-    onAddCounter: () => dispatch({ type: 'ADD', value: 5 }),
-    onSubtractCounter: () => dispatch({ type: 'SUBTRACT', value: 5 })
+    onIncrementCounter: () => dispatch({ type: actionTypes.INCREMENT }),
+    onDecrementCounter: () => dispatch({ type: actionTypes.DECREMENT }),
+    onAddCounter: () => dispatch({ type: actionTypes.ADD, value: 5 }),
+    onSubtractCounter: () => dispatch({ type: actionTypes.SUBTRACT, value: 5 })
   };
 };
 

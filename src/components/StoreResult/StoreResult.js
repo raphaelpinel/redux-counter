@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styles from './StoreResult.module.css';
+import * as actionTypes from '../../store/actions';
 
 const StoreResult = props => (
   <div className={styles.StoreResult}>
@@ -27,8 +28,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onStoreResult: () => dispatch({ type: 'STORE_RESULT' }),
-    onDeleteResult: id => dispatch({ type: 'DELETE_RESULT', resultElId: id })
+    onStoreResult: () => dispatch({ type: actionTypes.STORE_RESULT }),
+    onDeleteResult: id =>
+      dispatch({ type: actionTypes.DELETE_RESULT, resultElId: id })
   };
 };
 export default connect(
