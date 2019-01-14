@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styles from './StoreResult.module.css';
 
 const StoreResult = props => (
@@ -8,7 +8,12 @@ const StoreResult = props => (
     <button onClick={props.onStoreResult}>Store Result</button>
     <ul>
       {props.storedResults.map(strRes => (
-        <li key={strRes.id}>{strRes.value}</li>
+        <li key={strRes.id}>
+          <span>
+            <FontAwesomeIcon icon="trash-alt" />
+          </span>
+          {strRes.value}
+        </li>
       ))}
     </ul>
   </div>
