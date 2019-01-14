@@ -6,7 +6,7 @@ import * as actionTypes from '../../store/actions';
 
 const StoreResult = props => (
   <div className={styles.StoreResult}>
-    <button onClick={props.onStoreResult}>Store Result</button>
+    <button onClick={() => props.onStoreResult(props.ctr)}>Store Result</button>
     <ul>
       {props.storedResults.map(strRes => (
         <li key={strRes.id}>
@@ -22,13 +22,15 @@ const StoreResult = props => (
 
 const mapStateToProps = state => {
   return {
-    storedResults: state.results
+    storedResults: state.res.results,
+    ctr: state.ctr.counter
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    onStoreResult: () => dispatch({ type: actionTypes.STORE_RESULT }),
+    onStoreResult: result =>
+      dispatch({ type: actionTypes.STORE_RESULT, result: result }),
     onDeleteResult: id =>
       dispatch({ type: actionTypes.DELETE_RESULT, resultElId: id })
   };
