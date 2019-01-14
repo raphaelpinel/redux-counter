@@ -9,7 +9,7 @@ const StoreResult = props => (
     <ul>
       {props.storedResults.map(strRes => (
         <li key={strRes.id}>
-          <span>
+          <span onClick={() => props.onDeleteResult(strRes.id)}>
             <FontAwesomeIcon icon="trash-alt" />
           </span>
           {strRes.value}
@@ -27,7 +27,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onStoreResult: () => dispatch({ type: 'STORE_RESULT' })
+    onStoreResult: () => dispatch({ type: 'STORE_RESULT' }),
+    onDeleteResult: id => dispatch({ type: 'DELETE_RESULT', resultElId: id })
   };
 };
 export default connect(
