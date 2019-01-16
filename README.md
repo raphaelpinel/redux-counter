@@ -1,6 +1,13 @@
 # redux-counter
 
-A simple counter with redux
+A simple counter with React and Redux
+
+See hosted project here:
+https://counter-1234.firebaseapp.com/
+
+Click on the white buttons to change your counter, on the orange "Store Result" to store the current result.
+
+Then hover over the results to delete them.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
